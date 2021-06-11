@@ -1,8 +1,11 @@
 import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
 
 const config = {
   apiKey: "AIzaSyA8ryyfUM2Il6rlJYBJE9eeqzsmBC7GBjs",
   authDomain: "chatapp-b862d.firebaseapp.com",
+  databaseURL: "https://chatapp-b862d-default-rtdb.firebaseio.com",
   projectId: "chatapp-b862d",
   storageBucket: "chatapp-b862d.appspot.com",
   messagingSenderId: "694526778",
@@ -10,3 +13,5 @@ const config = {
 };
 
 const app = firebase.initializeApp(config);
+export const auth = app.auth();
+export const database = app.database();
