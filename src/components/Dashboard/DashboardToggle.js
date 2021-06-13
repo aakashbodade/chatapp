@@ -11,7 +11,7 @@ const DashboardToggle = () => {
     auth.signOut();
     Alert.info("Signout", 5000);
     close();
-  }, []);
+  }, [close]);
 
   return (
     <div>
