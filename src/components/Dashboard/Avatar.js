@@ -4,6 +4,7 @@ import { useModalState } from "../../misc/CustomHooks";
 import AvatarEditor from "react-avatar-editor";
 import { useProfile } from "../../context/Profile.Context";
 import { database, storage } from "../../misc/firebase";
+import ProfileAvatar from "./ProfileAvatar";
 
 const fileTypes = ".png, .jpg, .jpeg";
 const acceptedFileTypes = ["image/png", "image/jpeg", "image/pjpeg"];
@@ -79,10 +80,15 @@ const Avatar = () => {
 
   return (
     <div className="mt-3 text-center">
+      <ProfileAvatar
+        src={profile.avatar}
+        name={profile.name}
+        className="width-200 height-200"
+      />
       <div>
         <label
-          htmlFor="avatar-upload"
           className="d-block cursor-pointer padded"
+          htmlFor="avatar-upload"
         >
           Select New Avatar
           <input
